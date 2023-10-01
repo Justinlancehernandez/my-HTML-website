@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fish Website</title>
+    <!-- Correct the Bootstrap CSS import URL -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- navigation bar-->
+    <nav class="navbar navbar-expand-lg navbar-success bg-secondary">
+        <a class="navbar-brand" href="#">Fish Website</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showLoginForm()">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="toggleFishGallery()">Fish Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Login Form -->
+    <div class="login-form" style="display: none;"> <!-- Initially hidden -->
+        <h2>Login</h2>
+        <form action="login.php" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Log In</button>
+        </form>
+    </div>
+
+    <div class="fish-gallery" id="fish-gallery">
+
+        <!-- Fish Information & type -->
+        <div class="fish-card">
+            <img src="Fish pictures/bettaFish.jpg" alt="Betta Fish">
+            <h3>Betta Fish</h3>
+            <p>Also known as Siamese fighting fish, they come from Southeast Asia and are popular in aquariums
+                worldwide.</p>
+        </div>
+
+        <div class="fish-card">
+            <img src="Fish pictures/GuppyFish.jpg" alt="Guppy Fish">
+            <h3>Guppy Fish</h3>
+            <p>Guppy fish are small, live-bearing tropical freshwater fish known for their vibrant colors and
+                adaptability.</p>
+        </div>
+
+        <div class="fish-card">
+            <img src="Fish pictures/MollyFish.jpg" alt="Molly Fish">
+            <h3>Molly Fish</h3>
+            <p>Molly fish are freshwater fish with various species, often chosen for their peaceful nature and ease of
+                care.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleFishGallery() {
+            var fishGallery = document.getElementById("fish-gallery");
+            if (fishGallery.style.display === "block") {
+                fishGallery.style.display = "none";
+            } else {
+                fishGallery.style.display = "block";
+            }
+        }
+
+        function showLoginForm() {
+            var loginForm = document.querySelector(".login-form");
+            loginForm.style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
